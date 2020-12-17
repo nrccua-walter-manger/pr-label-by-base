@@ -1,11 +1,3 @@
-import * as core from '@actions/core'
+import action from './action'
 
-async function run(): Promise<void> {
-  try {
-    core.setOutput('time', new Date().toTimeString())
-  } catch (error) {
-    core.setFailed(error.message)
-  }
-}
-
-run()
+action()

@@ -3,7 +3,7 @@ require('./sourcemap-register.js');module.exports =
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 109:
+/***/ 139:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
@@ -37,7 +37,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__webpack_require__(186));
-function run() {
+function action() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             core.setOutput('time', new Date().toTimeString());
@@ -47,7 +47,21 @@ function run() {
         }
     });
 }
-run();
+exports.default = action;
+
+
+/***/ }),
+
+/***/ 109:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const action_1 = __importDefault(__webpack_require__(139));
+action_1.default();
 
 
 /***/ }),
