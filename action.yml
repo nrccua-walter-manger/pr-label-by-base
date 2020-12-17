@@ -1,11 +1,13 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'PR Label By Base'
+description: 'Automatically labels your PRs based on the Base Ref branch your merging into.'
+author: 'ACT | NRCCUA'
 inputs:
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+  configuration-path:
+    description: 'The path for the label configurations'
+    default: '.github/pr-branch-labeler.yml'
+branding:
+  icon: 'tag'
+  color: 'green'
 runs:
   using: 'node12'
   main: 'dist/index.js'
