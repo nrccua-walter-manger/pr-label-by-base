@@ -1,0 +1,6 @@
+branchLabels:
+  master: ['master']
+  main: ['main']
+  staging: ['staging']
+  development: ['dev']
+  multi: ['1', '2', '3']
