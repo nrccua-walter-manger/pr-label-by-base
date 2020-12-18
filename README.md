@@ -25,7 +25,7 @@ jobs:
   pr-labeler:
     runs-on: ubuntu-latest
     steps:
-      - uses: nrccua-walter-manger/pr-label-by-base@beta
+      - uses: nrccua-walter-manger/pr-label-by-base@v0.1-alpha
         with:
           configuration-path: .github/pr-label-by-base.yml
         env:
