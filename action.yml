@@ -1,5 +1,5 @@
 name: 'PR Label By Base'
-description: 'Automatically labels your PRs based on the Base Ref branch your merging into.'
+description: 'Automatically labels your PRs based on the Base Ref branch you are merging into.'
 author: 'ACT | NRCCUA'
 inputs:
   configuration-path:
