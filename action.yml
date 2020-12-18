@@ -4,7 +4,7 @@ author: 'ACT | NRCCUA'
 inputs:
   configuration-path:
     description: 'The path for the label configurations'
-    default: '.github/pr-branch-labeler.yml'
+    default: '.github/pr-label-by-base.yml'
 branding:
   icon: 'tag'
   color: 'green'
