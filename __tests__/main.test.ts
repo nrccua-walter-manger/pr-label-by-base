@@ -33,6 +33,49 @@ describe('pr-label-by-base', () => {
     )
     expect.assertions(1)
   })
+
+  it('adds multi labels for "multi" branch', async () => {
+    nock('https://api.github.com')
+      .get(
+        '/repos/Codertocat/Hello-World/contents/.github%2Fpr-label-by-base.yml?ref=multi'
+      )
+      .reply(200, configFixture())
+      .post('/repos/Codertocat/Hello-World/issues/1/labels', (body: any) => {
+        expect(body).toMatchObject({
+          labels: ['1', '2', '3']
+        })
+        return true
+      })
+      .reply(200)
+
+    await action(
+      new MockContext(
+        pullRequestOpenedFixture(
+          {ref: 'fix/ARCH-555_MoreThings'},
+          {baseRef: 'multi'}
+        )
+      )
+    )
+    expect.assertions(1)
+  })
+
+  it('does not add labels if they are not configured', async () => {
+    nock('https://api.github.com')
+      .get(
+        '/repos/Codertocat/Hello-World/contents/.github%2Fpr-label-by-base.yml?ref=unknown'
+      )
+      .reply(200, configFixture())
+
+    await action(
+      new MockContext(
+        pullRequestOpenedFixture(
+          {ref: 'fix/ARCH-555_unknown'},
+          {baseRef: 'unknown'}
+        )
+      )
+    )
+    expect.assertions(0)
+  })
 })
 
 class MockContext extends Context {
