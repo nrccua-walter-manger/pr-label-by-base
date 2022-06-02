@@ -30,14 +30,14 @@
     "@types/js-yaml": "^4.0.2"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.0",
+    "@types/jest": "^28.1.0",
     "@types/node": "^16.4.14",
     "@typescript-eslint/parser": "^4.29.1",
     "@vercel/ncc": "^0.29.0",
     "eslint": "^7.15.0",
     "eslint-plugin-github": "^4.2.0",
     "eslint-plugin-jest": "^24.4.0",
-    "jest": "^27.0.6",
+    "jest": "^28.1.0",
     "jest-circus": "^27.0.6",
     "js-yaml": "^4.1.0",
     "nock": "^13.1.1",
